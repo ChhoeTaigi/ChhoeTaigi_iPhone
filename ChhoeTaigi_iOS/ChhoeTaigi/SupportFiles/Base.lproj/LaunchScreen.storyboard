@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2n-rK-yQF">
+                                <rect key="frame" x="0.0" y="128" width="375" height="431"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="JCy-Nn-oW0">
+                                        <rect key="frame" x="16" y="272" width="343" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="JcI-TK-gJB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-256.png" translatesAutoresizingMaskIntoConstraints="NO" id="pmO-GR-uub">
+                                        <rect key="frame" x="16" y="8" width="343" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="eBq-Q1-gAw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免上網 台語辭典 APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO5-jb-COD">
+                                        <rect key="frame" x="16" y="380" width="343" height="31"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pmO-GR-uub" firstAttribute="leading" secondItem="JCy-Nn-oW0" secondAttribute="leading" id="1BL-IJ-evO"/>
+                                    <constraint firstAttribute="bottom" secondItem="jO5-jb-COD" secondAttribute="bottom" constant="20" id="GKF-Rg-zwx"/>
+                                    <constraint firstItem="pmO-GR-uub" firstAttribute="leading" secondItem="E2n-rK-yQF" secondAttribute="leading" constant="16" id="Hgm-MX-Iyi"/>
+                                    <constraint firstItem="JCy-Nn-oW0" firstAttribute="top" secondItem="pmO-GR-uub" secondAttribute="bottom" constant="8" symbolic="YES" id="Qqv-lF-Bfq"/>
+                                    <constraint firstItem="JCy-Nn-oW0" firstAttribute="leading" secondItem="jO5-jb-COD" secondAttribute="leading" id="SuL-cM-2MQ"/>
+                                    <constraint firstItem="pmO-GR-uub" firstAttribute="centerX" secondItem="E2n-rK-yQF" secondAttribute="centerX" id="Vzi-Kj-gNY"/>
+                                    <constraint firstItem="jO5-jb-COD" firstAttribute="top" secondItem="JCy-Nn-oW0" secondAttribute="bottom" constant="8" symbolic="YES" id="X2o-52-dC0"/>
+                                    <constraint firstItem="pmO-GR-uub" firstAttribute="top" secondItem="E2n-rK-yQF" secondAttribute="topMargin" id="dCc-Fx-9ZE"/>
+                                    <constraint firstItem="pmO-GR-uub" firstAttribute="trailing" secondItem="JCy-Nn-oW0" secondAttribute="trailing" id="iFw-tw-OIv"/>
+                                    <constraint firstItem="JCy-Nn-oW0" firstAttribute="trailing" secondItem="jO5-jb-COD" secondAttribute="trailing" id="sVm-pW-g7k"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E2n-rK-yQF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="W9T-Oc-txc"/>
+                            <constraint firstItem="E2n-rK-yQF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aLc-2c-L0D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-256.png" width="256" height="256"/>
+        <image name="logo.png" width="247" height="60"/>
+    </resources>
+</document>

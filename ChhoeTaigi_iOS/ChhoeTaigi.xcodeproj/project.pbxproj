@@ -1,0 +1,914 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7578F89621B015F486A2C2E8 /* Pods_ChhoeTaigi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A785933DC5D0137290C998D /* Pods_ChhoeTaigi.framework */; };
+		872F81452131EC3A003C40C6 /* RealmDatabaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F81442131EC3A003C40C6 /* RealmDatabaseLoader.swift */; };
+		872F81492131F10D003C40C6 /* dict.realm in Resources */ = {isa = PBXBuildFile; fileRef = 872F81482131F10D003C40C6 /* dict.realm */; };
+		872F814B2131F2B7003C40C6 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F814A2131F2B7003C40C6 /* RealmModels.swift */; };
+		874C10192148B7D600D26024 /* SearchAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C10182148B7D600D26024 /* SearchAllTableViewCell.swift */; };
+		874C106321491E0200D26024 /* KauiokpooTaigiDictResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C106221491E0200D26024 /* KauiokpooTaigiDictResultTableViewCell.swift */; };
+		8763EAD22145096B00FD040B /* KauiokpooTaigiDictResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8763EAD12145096B00FD040B /* KauiokpooTaigiDictResultTableViewController.swift */; };
+		877404752152CC0300577D89 /* EmbreeTaigiSutianWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404742152CC0300577D89 /* EmbreeTaigiSutianWordTableViewController.swift */; };
+		877404772152CCC300577D89 /* ITaigiHoataiSutianWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404762152CCC300577D89 /* ITaigiHoataiSutianWordTableViewController.swift */; };
+		877404792152CCD200577D89 /* KamJitianWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404782152CCD200577D89 /* KamJitianWordTableViewController.swift */; };
+		8774047B2152CD0400577D89 /* KauiokpooTaigiDictWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774047A2152CD0400577D89 /* KauiokpooTaigiDictWordTableViewController.swift */; };
+		8774047D2152CD3000577D89 /* MaryknollTaiengSutianWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774047C2152CD3000577D89 /* MaryknollTaiengSutianWordTableViewController.swift */; };
+		8774047F2152CD4300577D89 /* TaihoaSoanntengSutianWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774047E2152CD4300577D89 /* TaihoaSoanntengSutianWordTableViewController.swift */; };
+		877404812152CD5700577D89 /* TaijitToaSutianWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404802152CD5700577D89 /* TaijitToaSutianWordTableViewController.swift */; };
+		877404832152CD7000577D89 /* TaioanPehoeKichhooGikuWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404822152CD7000577D89 /* TaioanPehoeKichhooGikuWordTableViewController.swift */; };
+		877404852152CD7C00577D89 /* TaioanSitbutMialuiWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404842152CD7C00577D89 /* TaioanSitbutMialuiWordTableViewController.swift */; };
+		877404872152D2E800577D89 /* TaioanSitbutMialuiWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404862152D2E800577D89 /* TaioanSitbutMialuiWordTableViewCell.swift */; };
+		8774048921537A4B00577D89 /* TaihoaSoanntengSutianWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774048821537A4B00577D89 /* TaihoaSoanntengSutianWordTableViewCell.swift */; };
+		8774048B2153CDE600577D89 /* TaioanPehoeKichhooGikuWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774048A2153CDE600577D89 /* TaioanPehoeKichhooGikuWordTableViewCell.swift */; };
+		8774048D2153CDFA00577D89 /* TaijitToaSutianWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774048C2153CDFA00577D89 /* TaijitToaSutianWordTableViewCell.swift */; };
+		8774048F2153CE1000577D89 /* MaryknollTaiengSutianWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774048E2153CE1000577D89 /* MaryknollTaiengSutianWordTableViewCell.swift */; };
+		877404912153CE3500577D89 /* KauiokpooTaigiDictWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404902153CE3500577D89 /* KauiokpooTaigiDictWordTableViewCell.swift */; };
+		877404932153CE4A00577D89 /* KamJitianWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404922153CE4A00577D89 /* KamJitianWordTableViewCell.swift */; };
+		877404952153CE5A00577D89 /* ITaigiHoataiSutianWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404942153CE5A00577D89 /* ITaigiHoataiSutianWordTableViewCell.swift */; };
+		877404972153CE7600577D89 /* EmbreeTaigiSutianWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877404962153CE7600577D89 /* EmbreeTaigiSutianWordTableViewCell.swift */; };
+		8782DF67214E4114009211EE /* TaijitToaSutianResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF66214E4114009211EE /* TaijitToaSutianResultTableViewCell.swift */; };
+		8782DF70214E41AC009211EE /* EmbreeTaigiSutianResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF6F214E41AC009211EE /* EmbreeTaigiSutianResultTableViewCell.swift */; };
+		8782DF72214E41BF009211EE /* ITaigiHoataiSutianResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF71214E41BF009211EE /* ITaigiHoataiSutianResultTableViewCell.swift */; };
+		8782DF74214E41CC009211EE /* KamJitianResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF73214E41CC009211EE /* KamJitianResultTableViewCell.swift */; };
+		8782DF76214E41E1009211EE /* MaryknollTaiengSutianResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF75214E41E1009211EE /* MaryknollTaiengSutianResultTableViewCell.swift */; };
+		8782DF78214E41FA009211EE /* TaioanPehoeKichhooGikuResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF77214E41FA009211EE /* TaioanPehoeKichhooGikuResultTableViewCell.swift */; };
+		8782DF7A214E420B009211EE /* TaioanSitbutMialuiResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF79214E420B009211EE /* TaioanSitbutMialuiResultTableViewCell.swift */; };
+		8782DF7C214E4222009211EE /* EmbreeTaigiSutianResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF7B214E4222009211EE /* EmbreeTaigiSutianResultTableViewController.swift */; };
+		8782DF7E214E4232009211EE /* ITaigiHoataiSutianResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF7D214E4232009211EE /* ITaigiHoataiSutianResultTableViewController.swift */; };
+		8782DF80214E4240009211EE /* KamJitianResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF7F214E4240009211EE /* KamJitianResultTableViewController.swift */; };
+		8782DF82214E4251009211EE /* MaryknollTaiengSutianResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF81214E4251009211EE /* MaryknollTaiengSutianResultTableViewController.swift */; };
+		8782DF84214E4265009211EE /* TaijitToaSutianResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF83214E4265009211EE /* TaijitToaSutianResultTableViewController.swift */; };
+		8782DF86214E4275009211EE /* TaioanSitbutMialuiResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF85214E4275009211EE /* TaioanSitbutMialuiResultTableViewController.swift */; };
+		8782DF88214E4287009211EE /* TaioanPehoeKichhooGikuResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF87214E4287009211EE /* TaioanPehoeKichhooGikuResultTableViewController.swift */; };
+		8782DF8A21518137009211EE /* poweredbyg0v-square.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782DF8921518136009211EE /* poweredbyg0v-square.png */; };
+		8782DF8D215184AF009211EE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF8C215184AF009211EE /* InfoViewController.swift */; };
+		8782DF8F215184F7009211EE /* WebkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782DF8E215184F7009211EE /* WebkitViewController.swift */; };
+		87BB293621341E4F0073D126 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB293521341E4F0073D126 /* MainTableViewController.swift */; };
+		87BB2938213435680073D126 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB2937213435680073D126 /* MainViewController.swift */; };
+		87BB293B21343B0E0073D126 /* SearchAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB293A21343B0E0073D126 /* SearchAllViewController.swift */; };
+		87BB293D21353D950073D126 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 87BB293C21353D950073D126 /* logo.png */; };
+		87BB293F21357FC60073D126 /* SearchAllResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB293E21357FC60073D126 /* SearchAllResult.swift */; };
+		87C0E4252131E45900F26C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E4242131E45900F26C32 /* AppDelegate.swift */; };
+		87C0E42A2131E45900F26C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C0E4282131E45900F26C32 /* Main.storyboard */; };
+		87C0E42C2131E45B00F26C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C0E42B2131E45B00F26C32 /* Assets.xcassets */; };
+		87C0E42F2131E45B00F26C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C0E42D2131E45B00F26C32 /* LaunchScreen.storyboard */; };
+		87C63D36215AAE3700B4DE57 /* String+ReplacingFirstOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C63D35215AAE3400B4DE57 /* String+ReplacingFirstOccurrence.swift */; };
+		87D479CE214A6E1B00ED5A40 /* Results+ToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D479CD214A6E1B00ED5A40 /* Results+ToArray.swift */; };
+		87D479D1214AC08900ED5A40 /* TaihoaSoanntengSutianResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D479D0214AC08900ED5A40 /* TaihoaSoanntengSutianResultTableViewController.swift */; };
+		87D479D4214AC25000ED5A40 /* TaihoaSoanntengSutianResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D479D3214AC25000ED5A40 /* TaihoaSoanntengSutianResultTableViewCell.swift */; };
+		87DADC7021551BE6004D39C5 /* Icon-55.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5221551BDE004D39C5 /* Icon-55.png */; };
+		87DADC7121551BE6004D39C5 /* Icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5321551BDF004D39C5 /* Icon-512.png */; };
+		87DADC7221551BE6004D39C5 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5421551BDF004D39C5 /* Icon-144.png */; };
+		87DADC7321551BE6004D39C5 /* Icon-172.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5521551BDF004D39C5 /* Icon-172.png */; };
+		87DADC7421551BE6004D39C5 /* Icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5621551BDF004D39C5 /* Icon-128.png */; };
+		87DADC7521551BE6004D39C5 /* Icon-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5721551BDF004D39C5 /* Icon-48.png */; };
+		87DADC7621551BE6004D39C5 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5821551BE0004D39C5 /* Icon-60.png */; };
+		87DADC7721551BE6004D39C5 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5921551BE0004D39C5 /* Icon-114.png */; };
+		87DADC7821551BE6004D39C5 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5A21551BE0004D39C5 /* Icon-152.png */; };
+		87DADC7921551BE6004D39C5 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5B21551BE0004D39C5 /* Icon-40.png */; };
+		87DADC7A21551BE6004D39C5 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5C21551BE0004D39C5 /* Icon-120.png */; };
+		87DADC7B21551BE6004D39C5 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5D21551BE1004D39C5 /* Icon-80.png */; };
+		87DADC7C21551BE6004D39C5 /* Icon-88.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5E21551BE1004D39C5 /* Icon-88.png */; };
+		87DADC7D21551BE6004D39C5 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC5F21551BE2004D39C5 /* Icon-58.png */; };
+		87DADC7E21551BE6004D39C5 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6021551BE2004D39C5 /* Icon-72.png */; };
+		87DADC7F21551BE6004D39C5 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6121551BE2004D39C5 /* Icon-76.png */; };
+		87DADC8021551BE6004D39C5 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6221551BE3004D39C5 /* Icon-57.png */; };
+		87DADC8121551BE6004D39C5 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6321551BE3004D39C5 /* Icon-29.png */; };
+		87DADC8221551BE6004D39C5 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6421551BE3004D39C5 /* Icon-180.png */; };
+		87DADC8321551BE6004D39C5 /* Icon-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6521551BE4004D39C5 /* Icon-32.png */; };
+		87DADC8421551BE6004D39C5 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6621551BE5004D39C5 /* Icon-50.png */; };
+		87DADC8521551BE6004D39C5 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6721551BE5004D39C5 /* Icon-100.png */; };
+		87DADC8621551BE6004D39C5 /* Icon-167.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6821551BE5004D39C5 /* Icon-167.png */; };
+		87DADC8721551BE6004D39C5 /* Icon-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6921551BE5004D39C5 /* Icon-256.png */; };
+		87DADC8821551BE6004D39C5 /* Icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6A21551BE5004D39C5 /* Icon-1024.png */; };
+		87DADC8921551BE6004D39C5 /* Icon-87.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6B21551BE5004D39C5 /* Icon-87.png */; };
+		87DADC8A21551BE6004D39C5 /* Icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6C21551BE5004D39C5 /* Icon-20.png */; };
+		87DADC8B21551BE6004D39C5 /* Icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6D21551BE6004D39C5 /* Icon-64.png */; };
+		87DADC8C21551BE6004D39C5 /* Icon-196.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6E21551BE6004D39C5 /* Icon-196.png */; };
+		87DADC8D21551BE6004D39C5 /* Icon-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6F21551BE6004D39C5 /* Icon-16.png */; };
+		87DADC922155544F004D39C5 /* Bundle+Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DADC912155544F004D39C5 /* Bundle+Versions.swift */; };
+		87DADCAC2158BC3C004D39C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DADCAB2158BC3C004D39C5 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0541EE412ADB793CFAD9F5F5 /* Pods-ChhoeTaigi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChhoeTaigi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChhoeTaigi/Pods-ChhoeTaigi.debug.xcconfig"; sourceTree = "<group>"; };
+		2A785933DC5D0137290C998D /* Pods_ChhoeTaigi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChhoeTaigi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C4E9767FC927534EB332CC /* Pods-ChhoeTaigi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChhoeTaigi.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChhoeTaigi/Pods-ChhoeTaigi.release.xcconfig"; sourceTree = "<group>"; };
+		872F81442131EC3A003C40C6 /* RealmDatabaseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseLoader.swift; sourceTree = "<group>"; };
+		872F81482131F10D003C40C6 /* dict.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict.realm; sourceTree = "<group>"; };
+		872F814A2131F2B7003C40C6 /* RealmModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
+		874C10182148B7D600D26024 /* SearchAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllTableViewCell.swift; sourceTree = "<group>"; };
+		874C106221491E0200D26024 /* KauiokpooTaigiDictResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KauiokpooTaigiDictResultTableViewCell.swift; sourceTree = "<group>"; };
+		8763EAD12145096B00FD040B /* KauiokpooTaigiDictResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KauiokpooTaigiDictResultTableViewController.swift; sourceTree = "<group>"; };
+		877404742152CC0300577D89 /* EmbreeTaigiSutianWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbreeTaigiSutianWordTableViewController.swift; sourceTree = "<group>"; };
+		877404762152CCC300577D89 /* ITaigiHoataiSutianWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITaigiHoataiSutianWordTableViewController.swift; sourceTree = "<group>"; };
+		877404782152CCD200577D89 /* KamJitianWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamJitianWordTableViewController.swift; sourceTree = "<group>"; };
+		8774047A2152CD0400577D89 /* KauiokpooTaigiDictWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KauiokpooTaigiDictWordTableViewController.swift; sourceTree = "<group>"; };
+		8774047C2152CD3000577D89 /* MaryknollTaiengSutianWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaryknollTaiengSutianWordTableViewController.swift; sourceTree = "<group>"; };
+		8774047E2152CD4300577D89 /* TaihoaSoanntengSutianWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaihoaSoanntengSutianWordTableViewController.swift; sourceTree = "<group>"; };
+		877404802152CD5700577D89 /* TaijitToaSutianWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaijitToaSutianWordTableViewController.swift; sourceTree = "<group>"; };
+		877404822152CD7000577D89 /* TaioanPehoeKichhooGikuWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanPehoeKichhooGikuWordTableViewController.swift; sourceTree = "<group>"; };
+		877404842152CD7C00577D89 /* TaioanSitbutMialuiWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanSitbutMialuiWordTableViewController.swift; sourceTree = "<group>"; };
+		877404862152D2E800577D89 /* TaioanSitbutMialuiWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanSitbutMialuiWordTableViewCell.swift; sourceTree = "<group>"; };
+		8774048821537A4B00577D89 /* TaihoaSoanntengSutianWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaihoaSoanntengSutianWordTableViewCell.swift; sourceTree = "<group>"; };
+		8774048A2153CDE600577D89 /* TaioanPehoeKichhooGikuWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanPehoeKichhooGikuWordTableViewCell.swift; sourceTree = "<group>"; };
+		8774048C2153CDFA00577D89 /* TaijitToaSutianWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaijitToaSutianWordTableViewCell.swift; sourceTree = "<group>"; };
+		8774048E2153CE1000577D89 /* MaryknollTaiengSutianWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaryknollTaiengSutianWordTableViewCell.swift; sourceTree = "<group>"; };
+		877404902153CE3500577D89 /* KauiokpooTaigiDictWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KauiokpooTaigiDictWordTableViewCell.swift; sourceTree = "<group>"; };
+		877404922153CE4A00577D89 /* KamJitianWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamJitianWordTableViewCell.swift; sourceTree = "<group>"; };
+		877404942153CE5A00577D89 /* ITaigiHoataiSutianWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITaigiHoataiSutianWordTableViewCell.swift; sourceTree = "<group>"; };
+		877404962153CE7600577D89 /* EmbreeTaigiSutianWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbreeTaigiSutianWordTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF66214E4114009211EE /* TaijitToaSutianResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaijitToaSutianResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF6F214E41AC009211EE /* EmbreeTaigiSutianResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbreeTaigiSutianResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF71214E41BF009211EE /* ITaigiHoataiSutianResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITaigiHoataiSutianResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF73214E41CC009211EE /* KamJitianResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamJitianResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF75214E41E1009211EE /* MaryknollTaiengSutianResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaryknollTaiengSutianResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF77214E41FA009211EE /* TaioanPehoeKichhooGikuResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanPehoeKichhooGikuResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF79214E420B009211EE /* TaioanSitbutMialuiResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanSitbutMialuiResultTableViewCell.swift; sourceTree = "<group>"; };
+		8782DF7B214E4222009211EE /* EmbreeTaigiSutianResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbreeTaigiSutianResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF7D214E4232009211EE /* ITaigiHoataiSutianResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITaigiHoataiSutianResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF7F214E4240009211EE /* KamJitianResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KamJitianResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF81214E4251009211EE /* MaryknollTaiengSutianResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaryknollTaiengSutianResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF83214E4265009211EE /* TaijitToaSutianResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaijitToaSutianResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF85214E4275009211EE /* TaioanSitbutMialuiResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanSitbutMialuiResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF87214E4287009211EE /* TaioanPehoeKichhooGikuResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaioanPehoeKichhooGikuResultTableViewController.swift; sourceTree = "<group>"; };
+		8782DF8921518136009211EE /* poweredbyg0v-square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poweredbyg0v-square.png"; sourceTree = "<group>"; };
+		8782DF8C215184AF009211EE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		8782DF8E215184F7009211EE /* WebkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebkitViewController.swift; sourceTree = "<group>"; };
+		87BB293521341E4F0073D126 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		87BB2937213435680073D126 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		87BB293A21343B0E0073D126 /* SearchAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllViewController.swift; sourceTree = "<group>"; };
+		87BB293C21353D950073D126 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		87BB293E21357FC60073D126 /* SearchAllResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllResult.swift; sourceTree = "<group>"; };
+		87C0E4212131E45900F26C32 /* ChhoeTaigi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChhoeTaigi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C0E4242131E45900F26C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87C0E4292131E45900F26C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87C0E42B2131E45B00F26C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87C0E42E2131E45B00F26C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87C0E4302131E45B00F26C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87C63D35215AAE3400B4DE57 /* String+ReplacingFirstOccurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ReplacingFirstOccurrence.swift"; sourceTree = "<group>"; };
+		87D479CD214A6E1B00ED5A40 /* Results+ToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+ToArray.swift"; sourceTree = "<group>"; };
+		87D479D0214AC08900ED5A40 /* TaihoaSoanntengSutianResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaihoaSoanntengSutianResultTableViewController.swift; sourceTree = "<group>"; };
+		87D479D3214AC25000ED5A40 /* TaihoaSoanntengSutianResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaihoaSoanntengSutianResultTableViewCell.swift; sourceTree = "<group>"; };
+		87DADC5221551BDE004D39C5 /* Icon-55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-55.png"; sourceTree = "<group>"; };
+		87DADC5321551BDF004D39C5 /* Icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-512.png"; sourceTree = "<group>"; };
+		87DADC5421551BDF004D39C5 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
+		87DADC5521551BDF004D39C5 /* Icon-172.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-172.png"; sourceTree = "<group>"; };
+		87DADC5621551BDF004D39C5 /* Icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-128.png"; sourceTree = "<group>"; };
+		87DADC5721551BDF004D39C5 /* Icon-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-48.png"; sourceTree = "<group>"; };
+		87DADC5821551BE0004D39C5 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		87DADC5921551BE0004D39C5 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
+		87DADC5A21551BE0004D39C5 /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = "<group>"; };
+		87DADC5B21551BE0004D39C5 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		87DADC5C21551BE0004D39C5 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		87DADC5D21551BE1004D39C5 /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-80.png"; sourceTree = "<group>"; };
+		87DADC5E21551BE1004D39C5 /* Icon-88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-88.png"; sourceTree = "<group>"; };
+		87DADC5F21551BE2004D39C5 /* Icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58.png"; sourceTree = "<group>"; };
+		87DADC6021551BE2004D39C5 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		87DADC6121551BE2004D39C5 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		87DADC6221551BE3004D39C5 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
+		87DADC6321551BE3004D39C5 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
+		87DADC6421551BE3004D39C5 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
+		87DADC6521551BE4004D39C5 /* Icon-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-32.png"; sourceTree = "<group>"; };
+		87DADC6621551BE5004D39C5 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		87DADC6721551BE5004D39C5 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
+		87DADC6821551BE5004D39C5 /* Icon-167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-167.png"; sourceTree = "<group>"; };
+		87DADC6921551BE5004D39C5 /* Icon-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-256.png"; sourceTree = "<group>"; };
+		87DADC6A21551BE5004D39C5 /* Icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-1024.png"; sourceTree = "<group>"; };
+		87DADC6B21551BE5004D39C5 /* Icon-87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-87.png"; sourceTree = "<group>"; };
+		87DADC6C21551BE5004D39C5 /* Icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20.png"; sourceTree = "<group>"; };
+		87DADC6D21551BE6004D39C5 /* Icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-64.png"; sourceTree = "<group>"; };
+		87DADC6E21551BE6004D39C5 /* Icon-196.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-196.png"; sourceTree = "<group>"; };
+		87DADC6F21551BE6004D39C5 /* Icon-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-16.png"; sourceTree = "<group>"; };
+		87DADC8E2155326F004D39C5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		87DADC8F2155326F004D39C5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		87DADC912155544F004D39C5 /* Bundle+Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Versions.swift"; sourceTree = "<group>"; };
+		87DADCAB2158BC3C004D39C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87C0E41E2131E45900F26C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578F89621B015F486A2C2E8 /* Pods_ChhoeTaigi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		330DC05BACCD154D83B64F57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A785933DC5D0137290C998D /* Pods_ChhoeTaigi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		872F81422131EBCD003C40C6 /* RealmDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				872F81442131EC3A003C40C6 /* RealmDatabaseLoader.swift */,
+				872F814A2131F2B7003C40C6 /* RealmModels.swift */,
+				87D479CD214A6E1B00ED5A40 /* Results+ToArray.swift */,
+			);
+			path = RealmDatabase;
+			sourceTree = "<group>";
+		};
+		872F81432131EC1A003C40C6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		872F81462131EFA7003C40C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				87C0E4282131E45900F26C32 /* Main.storyboard */,
+				87BB293521341E4F0073D126 /* MainTableViewController.swift */,
+				87BB2937213435680073D126 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		872F81472131F0AF003C40C6 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				87DADC9021553438004D39C5 /* Images */,
+				87C0E4242131E45900F26C32 /* AppDelegate.swift */,
+				874C101E21490D3200D26024 /* AppIcon */,
+				87C0E42B2131E45B00F26C32 /* Assets.xcassets */,
+				872F81482131F10D003C40C6 /* dict.realm */,
+				87C0E4302131E45B00F26C32 /* Info.plist */,
+				87C0E42D2131E45B00F26C32 /* LaunchScreen.storyboard */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		874C101E21490D3200D26024 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				87DADC6F21551BE6004D39C5 /* Icon-16.png */,
+				87DADC6C21551BE5004D39C5 /* Icon-20.png */,
+				87DADC6321551BE3004D39C5 /* Icon-29.png */,
+				87DADC6521551BE4004D39C5 /* Icon-32.png */,
+				87DADC5B21551BE0004D39C5 /* Icon-40.png */,
+				87DADC5721551BDF004D39C5 /* Icon-48.png */,
+				87DADC6621551BE5004D39C5 /* Icon-50.png */,
+				87DADC5221551BDE004D39C5 /* Icon-55.png */,
+				87DADC6221551BE3004D39C5 /* Icon-57.png */,
+				87DADC5F21551BE2004D39C5 /* Icon-58.png */,
+				87DADC5821551BE0004D39C5 /* Icon-60.png */,
+				87DADC6D21551BE6004D39C5 /* Icon-64.png */,
+				87DADC6021551BE2004D39C5 /* Icon-72.png */,
+				87DADC6121551BE2004D39C5 /* Icon-76.png */,
+				87DADC5D21551BE1004D39C5 /* Icon-80.png */,
+				87DADC6B21551BE5004D39C5 /* Icon-87.png */,
+				87DADC5E21551BE1004D39C5 /* Icon-88.png */,
+				87DADC6721551BE5004D39C5 /* Icon-100.png */,
+				87DADC5921551BE0004D39C5 /* Icon-114.png */,
+				87DADC5C21551BE0004D39C5 /* Icon-120.png */,
+				87DADC5621551BDF004D39C5 /* Icon-128.png */,
+				87DADC5421551BDF004D39C5 /* Icon-144.png */,
+				87DADC5A21551BE0004D39C5 /* Icon-152.png */,
+				87DADC6821551BE5004D39C5 /* Icon-167.png */,
+				87DADC5521551BDF004D39C5 /* Icon-172.png */,
+				87DADC6421551BE3004D39C5 /* Icon-180.png */,
+				87DADC6E21551BE6004D39C5 /* Icon-196.png */,
+				87DADC6921551BE5004D39C5 /* Icon-256.png */,
+				87DADC5321551BDF004D39C5 /* Icon-512.png */,
+				87DADC6A21551BE5004D39C5 /* Icon-1024.png */,
+			);
+			path = AppIcon;
+			sourceTree = "<group>";
+		};
+		874C1061214915B300D26024 /* KauiokpooTaigiDict */ = {
+			isa = PBXGroup;
+			children = (
+				874C106221491E0200D26024 /* KauiokpooTaigiDictResultTableViewCell.swift */,
+				8763EAD12145096B00FD040B /* KauiokpooTaigiDictResultTableViewController.swift */,
+				877404902153CE3500577D89 /* KauiokpooTaigiDictWordTableViewCell.swift */,
+				8774047A2152CD0400577D89 /* KauiokpooTaigiDictWordTableViewController.swift */,
+				87C63D35215AAE3400B4DE57 /* String+ReplacingFirstOccurrence.swift */,
+			);
+			path = KauiokpooTaigiDict;
+			sourceTree = "<group>";
+		};
+		8763EACF214508EC00FD040B /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF69214E4139009211EE /* EmbreeTaigiSutian */,
+				8782DF6B214E4154009211EE /* ITaigiHoataiSutian */,
+				8782DF6A214E4143009211EE /* KamJitian */,
+				874C1061214915B300D26024 /* KauiokpooTaigiDict */,
+				8782DF68214E411F009211EE /* MaryknollTaiengSutian */,
+				87D479CF214AC04800ED5A40 /* TaihoaSoanntengSutian */,
+				8782DF65214E4094009211EE /* TaijitToaSutian */,
+				8782DF6C214E4163009211EE /* TaioanPehoeKichhooGiku */,
+				8782DF6D214E4172009211EE /* TaioanSitbutMialui */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		8782DF65214E4094009211EE /* TaijitToaSutian */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF66214E4114009211EE /* TaijitToaSutianResultTableViewCell.swift */,
+				8782DF83214E4265009211EE /* TaijitToaSutianResultTableViewController.swift */,
+				8774048C2153CDFA00577D89 /* TaijitToaSutianWordTableViewCell.swift */,
+				877404802152CD5700577D89 /* TaijitToaSutianWordTableViewController.swift */,
+			);
+			path = TaijitToaSutian;
+			sourceTree = "<group>";
+		};
+		8782DF68214E411F009211EE /* MaryknollTaiengSutian */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF75214E41E1009211EE /* MaryknollTaiengSutianResultTableViewCell.swift */,
+				8782DF81214E4251009211EE /* MaryknollTaiengSutianResultTableViewController.swift */,
+				8774048E2153CE1000577D89 /* MaryknollTaiengSutianWordTableViewCell.swift */,
+				8774047C2152CD3000577D89 /* MaryknollTaiengSutianWordTableViewController.swift */,
+			);
+			path = MaryknollTaiengSutian;
+			sourceTree = "<group>";
+		};
+		8782DF69214E4139009211EE /* EmbreeTaigiSutian */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF6F214E41AC009211EE /* EmbreeTaigiSutianResultTableViewCell.swift */,
+				8782DF7B214E4222009211EE /* EmbreeTaigiSutianResultTableViewController.swift */,
+				877404962153CE7600577D89 /* EmbreeTaigiSutianWordTableViewCell.swift */,
+				877404742152CC0300577D89 /* EmbreeTaigiSutianWordTableViewController.swift */,
+			);
+			path = EmbreeTaigiSutian;
+			sourceTree = "<group>";
+		};
+		8782DF6A214E4143009211EE /* KamJitian */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF73214E41CC009211EE /* KamJitianResultTableViewCell.swift */,
+				8782DF7F214E4240009211EE /* KamJitianResultTableViewController.swift */,
+				877404922153CE4A00577D89 /* KamJitianWordTableViewCell.swift */,
+				877404782152CCD200577D89 /* KamJitianWordTableViewController.swift */,
+			);
+			path = KamJitian;
+			sourceTree = "<group>";
+		};
+		8782DF6B214E4154009211EE /* ITaigiHoataiSutian */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF71214E41BF009211EE /* ITaigiHoataiSutianResultTableViewCell.swift */,
+				8782DF7D214E4232009211EE /* ITaigiHoataiSutianResultTableViewController.swift */,
+				877404942153CE5A00577D89 /* ITaigiHoataiSutianWordTableViewCell.swift */,
+				877404762152CCC300577D89 /* ITaigiHoataiSutianWordTableViewController.swift */,
+			);
+			path = ITaigiHoataiSutian;
+			sourceTree = "<group>";
+		};
+		8782DF6C214E4163009211EE /* TaioanPehoeKichhooGiku */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF77214E41FA009211EE /* TaioanPehoeKichhooGikuResultTableViewCell.swift */,
+				8782DF87214E4287009211EE /* TaioanPehoeKichhooGikuResultTableViewController.swift */,
+				8774048A2153CDE600577D89 /* TaioanPehoeKichhooGikuWordTableViewCell.swift */,
+				877404822152CD7000577D89 /* TaioanPehoeKichhooGikuWordTableViewController.swift */,
+			);
+			path = TaioanPehoeKichhooGiku;
+			sourceTree = "<group>";
+		};
+		8782DF6D214E4172009211EE /* TaioanSitbutMialui */ = {
+			isa = PBXGroup;
+			children = (
+				8782DF79214E420B009211EE /* TaioanSitbutMialuiResultTableViewCell.swift */,
+				8782DF85214E4275009211EE /* TaioanSitbutMialuiResultTableViewController.swift */,
+				877404862152D2E800577D89 /* TaioanSitbutMialuiWordTableViewCell.swift */,
+				877404842152CD7C00577D89 /* TaioanSitbutMialuiWordTableViewController.swift */,
+			);
+			path = TaioanSitbutMialui;
+			sourceTree = "<group>";
+		};
+		8782DF8B21518467009211EE /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				87DADC912155544F004D39C5 /* Bundle+Versions.swift */,
+				8782DF8C215184AF009211EE /* InfoViewController.swift */,
+				8782DF8E215184F7009211EE /* WebkitViewController.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		87BB293921343AED0073D126 /* SearchAll */ = {
+			isa = PBXGroup;
+			children = (
+				87BB293E21357FC60073D126 /* SearchAllResult.swift */,
+				874C10182148B7D600D26024 /* SearchAllTableViewCell.swift */,
+				87BB293A21343B0E0073D126 /* SearchAllViewController.swift */,
+			);
+			path = SearchAll;
+			sourceTree = "<group>";
+		};
+		87C0E4182131E45900F26C32 = {
+			isa = PBXGroup;
+			children = (
+				87C0E4232131E45900F26C32 /* ChhoeTaigi */,
+				87C0E4222131E45900F26C32 /* Products */,
+				B5647765C643AA37BD4328AB /* Pods */,
+				330DC05BACCD154D83B64F57 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		87C0E4222131E45900F26C32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87C0E4212131E45900F26C32 /* ChhoeTaigi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87C0E4232131E45900F26C32 /* ChhoeTaigi */ = {
+			isa = PBXGroup;
+			children = (
+				87DADCAB2158BC3C004D39C5 /* GoogleService-Info.plist */,
+				8782DF8B21518467009211EE /* Info */,
+				872F81462131EFA7003C40C6 /* Main */,
+				872F81422131EBCD003C40C6 /* RealmDatabase */,
+				87BB293921343AED0073D126 /* SearchAll */,
+				8763EACF214508EC00FD040B /* SearchResult */,
+				872F81472131F0AF003C40C6 /* SupportFiles */,
+				872F81432131EC1A003C40C6 /* Utils */,
+			);
+			path = ChhoeTaigi;
+			sourceTree = "<group>";
+		};
+		87D479CF214AC04800ED5A40 /* TaihoaSoanntengSutian */ = {
+			isa = PBXGroup;
+			children = (
+				87D479D3214AC25000ED5A40 /* TaihoaSoanntengSutianResultTableViewCell.swift */,
+				87D479D0214AC08900ED5A40 /* TaihoaSoanntengSutianResultTableViewController.swift */,
+				8774048821537A4B00577D89 /* TaihoaSoanntengSutianWordTableViewCell.swift */,
+				8774047E2152CD4300577D89 /* TaihoaSoanntengSutianWordTableViewController.swift */,
+			);
+			path = TaihoaSoanntengSutian;
+			sourceTree = "<group>";
+		};
+		87DADC9021553438004D39C5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				87BB293C21353D950073D126 /* logo.png */,
+				8782DF8921518136009211EE /* poweredbyg0v-square.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B5647765C643AA37BD4328AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0541EE412ADB793CFAD9F5F5 /* Pods-ChhoeTaigi.debug.xcconfig */,
+				55C4E9767FC927534EB332CC /* Pods-ChhoeTaigi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87C0E4202131E45900F26C32 /* ChhoeTaigi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C0E4332131E45B00F26C32 /* Build configuration list for PBXNativeTarget "ChhoeTaigi" */;
+			buildPhases = (
+				FEC504BAA1312C1CB663D7E1 /* [CP] Check Pods Manifest.lock */,
+				87C0E41D2131E45900F26C32 /* Sources */,
+				87C0E41E2131E45900F26C32 /* Frameworks */,
+				87C0E41F2131E45900F26C32 /* Resources */,
+				A9669D6F40E4C02AC4187B7D /* [CP] Embed Pods Frameworks */,
+				87DADCAD2158BEA9004D39C5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChhoeTaigi;
+			productName = ChhoeTaigi;
+			productReference = 87C0E4212131E45900F26C32 /* ChhoeTaigi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87C0E4192131E45900F26C32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = TaccoTap;
+				TargetAttributes = {
+					87C0E4202131E45900F26C32 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
+					};
+				};
+			};
+			buildConfigurationList = 87C0E41C2131E45900F26C32 /* Build configuration list for PBXProject "ChhoeTaigi" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+			);
+			mainGroup = 87C0E4182131E45900F26C32;
+			productRefGroup = 87C0E4222131E45900F26C32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87C0E4202131E45900F26C32 /* ChhoeTaigi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87C0E41F2131E45900F26C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87DADC7B21551BE6004D39C5 /* Icon-80.png in Resources */,
+				87DADC8721551BE6004D39C5 /* Icon-256.png in Resources */,
+				87DADC7921551BE6004D39C5 /* Icon-40.png in Resources */,
+				87DADC7E21551BE6004D39C5 /* Icon-72.png in Resources */,
+				87DADC8121551BE6004D39C5 /* Icon-29.png in Resources */,
+				87DADC7F21551BE6004D39C5 /* Icon-76.png in Resources */,
+				87DADCAC2158BC3C004D39C5 /* GoogleService-Info.plist in Resources */,
+				87DADC8521551BE6004D39C5 /* Icon-100.png in Resources */,
+				87DADC7321551BE6004D39C5 /* Icon-172.png in Resources */,
+				87BB293D21353D950073D126 /* logo.png in Resources */,
+				87DADC8321551BE6004D39C5 /* Icon-32.png in Resources */,
+				87C0E42F2131E45B00F26C32 /* LaunchScreen.storyboard in Resources */,
+				87DADC8021551BE6004D39C5 /* Icon-57.png in Resources */,
+				87DADC7421551BE6004D39C5 /* Icon-128.png in Resources */,
+				87DADC8621551BE6004D39C5 /* Icon-167.png in Resources */,
+				87DADC7521551BE6004D39C5 /* Icon-48.png in Resources */,
+				87DADC7C21551BE6004D39C5 /* Icon-88.png in Resources */,
+				872F81492131F10D003C40C6 /* dict.realm in Resources */,
+				87C0E42C2131E45B00F26C32 /* Assets.xcassets in Resources */,
+				8782DF8A21518137009211EE /* poweredbyg0v-square.png in Resources */,
+				87DADC8A21551BE6004D39C5 /* Icon-20.png in Resources */,
+				87DADC8221551BE6004D39C5 /* Icon-180.png in Resources */,
+				87DADC7021551BE6004D39C5 /* Icon-55.png in Resources */,
+				87DADC7121551BE6004D39C5 /* Icon-512.png in Resources */,
+				87DADC8D21551BE6004D39C5 /* Icon-16.png in Resources */,
+				87DADC7D21551BE6004D39C5 /* Icon-58.png in Resources */,
+				87DADC8C21551BE6004D39C5 /* Icon-196.png in Resources */,
+				87DADC7221551BE6004D39C5 /* Icon-144.png in Resources */,
+				87DADC7621551BE6004D39C5 /* Icon-60.png in Resources */,
+				87DADC7821551BE6004D39C5 /* Icon-152.png in Resources */,
+				87DADC7721551BE6004D39C5 /* Icon-114.png in Resources */,
+				87DADC8421551BE6004D39C5 /* Icon-50.png in Resources */,
+				87DADC8921551BE6004D39C5 /* Icon-87.png in Resources */,
+				87DADC8B21551BE6004D39C5 /* Icon-64.png in Resources */,
+				87DADC8821551BE6004D39C5 /* Icon-1024.png in Resources */,
+				87DADC7A21551BE6004D39C5 /* Icon-120.png in Resources */,
+				87C0E42A2131E45900F26C32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87DADCAD2158BEA9004D39C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+		};
+		A9669D6F40E4C02AC4187B7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChhoeTaigi/Pods-ChhoeTaigi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChhoeTaigi/Pods-ChhoeTaigi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEC504BAA1312C1CB663D7E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChhoeTaigi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87C0E41D2131E45900F26C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8782DF7E214E4232009211EE /* ITaigiHoataiSutianResultTableViewController.swift in Sources */,
+				8782DF80214E4240009211EE /* KamJitianResultTableViewController.swift in Sources */,
+				8774047B2152CD0400577D89 /* KauiokpooTaigiDictWordTableViewController.swift in Sources */,
+				877404912153CE3500577D89 /* KauiokpooTaigiDictWordTableViewCell.swift in Sources */,
+				8782DF8F215184F7009211EE /* WebkitViewController.swift in Sources */,
+				87BB293621341E4F0073D126 /* MainTableViewController.swift in Sources */,
+				8774048B2153CDE600577D89 /* TaioanPehoeKichhooGikuWordTableViewCell.swift in Sources */,
+				8774048921537A4B00577D89 /* TaihoaSoanntengSutianWordTableViewCell.swift in Sources */,
+				8774047F2152CD4300577D89 /* TaihoaSoanntengSutianWordTableViewController.swift in Sources */,
+				877404752152CC0300577D89 /* EmbreeTaigiSutianWordTableViewController.swift in Sources */,
+				8782DF82214E4251009211EE /* MaryknollTaiengSutianResultTableViewController.swift in Sources */,
+				8782DF86214E4275009211EE /* TaioanSitbutMialuiResultTableViewController.swift in Sources */,
+				8774048F2153CE1000577D89 /* MaryknollTaiengSutianWordTableViewCell.swift in Sources */,
+				877404772152CCC300577D89 /* ITaigiHoataiSutianWordTableViewController.swift in Sources */,
+				8782DF84214E4265009211EE /* TaijitToaSutianResultTableViewController.swift in Sources */,
+				877404972153CE7600577D89 /* EmbreeTaigiSutianWordTableViewCell.swift in Sources */,
+				877404932153CE4A00577D89 /* KamJitianWordTableViewCell.swift in Sources */,
+				87D479CE214A6E1B00ED5A40 /* Results+ToArray.swift in Sources */,
+				8782DF76214E41E1009211EE /* MaryknollTaiengSutianResultTableViewCell.swift in Sources */,
+				8782DF72214E41BF009211EE /* ITaigiHoataiSutianResultTableViewCell.swift in Sources */,
+				87C63D36215AAE3700B4DE57 /* String+ReplacingFirstOccurrence.swift in Sources */,
+				8763EAD22145096B00FD040B /* KauiokpooTaigiDictResultTableViewController.swift in Sources */,
+				874C106321491E0200D26024 /* KauiokpooTaigiDictResultTableViewCell.swift in Sources */,
+				872F814B2131F2B7003C40C6 /* RealmModels.swift in Sources */,
+				877404852152CD7C00577D89 /* TaioanSitbutMialuiWordTableViewController.swift in Sources */,
+				87D479D4214AC25000ED5A40 /* TaihoaSoanntengSutianResultTableViewCell.swift in Sources */,
+				8774047D2152CD3000577D89 /* MaryknollTaiengSutianWordTableViewController.swift in Sources */,
+				87BB293B21343B0E0073D126 /* SearchAllViewController.swift in Sources */,
+				87BB293F21357FC60073D126 /* SearchAllResult.swift in Sources */,
+				8782DF88214E4287009211EE /* TaioanPehoeKichhooGikuResultTableViewController.swift in Sources */,
+				8782DF70214E41AC009211EE /* EmbreeTaigiSutianResultTableViewCell.swift in Sources */,
+				87DADC922155544F004D39C5 /* Bundle+Versions.swift in Sources */,
+				8782DF67214E4114009211EE /* TaijitToaSutianResultTableViewCell.swift in Sources */,
+				877404832152CD7000577D89 /* TaioanPehoeKichhooGikuWordTableViewController.swift in Sources */,
+				872F81452131EC3A003C40C6 /* RealmDatabaseLoader.swift in Sources */,
+				8774048D2153CDFA00577D89 /* TaijitToaSutianWordTableViewCell.swift in Sources */,
+				8782DF78214E41FA009211EE /* TaioanPehoeKichhooGikuResultTableViewCell.swift in Sources */,
+				87D479D1214AC08900ED5A40 /* TaihoaSoanntengSutianResultTableViewController.swift in Sources */,
+				877404812152CD5700577D89 /* TaijitToaSutianWordTableViewController.swift in Sources */,
+				87C0E4252131E45900F26C32 /* AppDelegate.swift in Sources */,
+				87BB2938213435680073D126 /* MainViewController.swift in Sources */,
+				877404872152D2E800577D89 /* TaioanSitbutMialuiWordTableViewCell.swift in Sources */,
+				874C10192148B7D600D26024 /* SearchAllTableViewCell.swift in Sources */,
+				8782DF74214E41CC009211EE /* KamJitianResultTableViewCell.swift in Sources */,
+				877404792152CCD200577D89 /* KamJitianWordTableViewController.swift in Sources */,
+				877404952153CE5A00577D89 /* ITaigiHoataiSutianWordTableViewCell.swift in Sources */,
+				8782DF7A214E420B009211EE /* TaioanSitbutMialuiResultTableViewCell.swift in Sources */,
+				8782DF7C214E4222009211EE /* EmbreeTaigiSutianResultTableViewController.swift in Sources */,
+				8782DF8D215184AF009211EE /* InfoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		87C0E4282131E45900F26C32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C0E4292131E45900F26C32 /* Base */,
+				87DADC8E2155326F004D39C5 /* zh-Hant */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		87C0E42D2131E45B00F26C32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C0E42E2131E45B00F26C32 /* Base */,
+				87DADC8F2155326F004D39C5 /* zh-Hant */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87C0E4312131E45B00F26C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		87C0E4322131E45B00F26C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87C0E4342131E45B00F26C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0541EE412ADB793CFAD9F5F5 /* Pods-ChhoeTaigi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6TMY38EGFK;
+				INFOPLIST_FILE = "$(SRCROOT)/ChhoeTaigi/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.taccotap.ChhoeTaigi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		87C0E4352131E45B00F26C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C4E9767FC927534EB332CC /* Pods-ChhoeTaigi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6TMY38EGFK;
+				INFOPLIST_FILE = "$(SRCROOT)/ChhoeTaigi/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.taccotap.ChhoeTaigi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87C0E41C2131E45900F26C32 /* Build configuration list for PBXProject "ChhoeTaigi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C0E4312131E45B00F26C32 /* Debug */,
+				87C0E4322131E45B00F26C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87C0E4332131E45B00F26C32 /* Build configuration list for PBXNativeTarget "ChhoeTaigi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C0E4342131E45B00F26C32 /* Debug */,
+				87C0E4352131E45B00F26C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87C0E4192131E45900F26C32 /* Project object */;
+}

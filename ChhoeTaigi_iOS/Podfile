@@ -1,0 +1,17 @@
+# Podfile
+platform :ios, '11.0'
+use_frameworks!
+
+target 'ChhoeTaigi' do
+    pod 'Firebase/Core'
+    pod 'Firebase/Performance'
+    pod 'Fabric', '~> 1.7.11'
+    pod 'Crashlytics', '~> 3.10.7'
+
+    pod 'RealmSwift'
+
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+
+    pod 'Segmentio',  '~> 3.0'
+end
