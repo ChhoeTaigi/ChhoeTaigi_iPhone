@@ -37,12 +37,20 @@ class TaioanSitbutMialuiResultTableViewController: UITableViewController {
     }
     
     func starSearch() {
-        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI || searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+                    queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                } else {
+                    queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                }
             } else {
-                queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+                    queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                } else {
+                    queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                }
             }
             let queryKeyword = self.keyword!.lowercased()
             let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -50,9 +58,9 @@ class TaioanSitbutMialuiResultTableViewController: UITableViewController {
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HANLO) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "hanji_taibun CONTAINS %@"
+                queryFormat = "hanji_taibun CONTAINS[c] %@"
             } else {
-                queryFormat = "hanji_taibun = %@"
+                queryFormat = "hanji_taibun =[c] %@"
             }
             let queryKeyword = self.keyword!.lowercased()
             let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)

@@ -37,12 +37,20 @@ class TaioanPehoeKichhooGikuResultTableViewController: UITableViewController {
     }
     
     func starSearch() {
-        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI || searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@ OR poj_input_dialect CONTAINS %@ OR poj_unicode_dialect CONTAINS %@ OR kiplmj_input_dialect CONTAINS %@ OR kiplmj_unicode_dialect CONTAINS %@"
+                if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+                    queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@ OR poj_input_dialect CONTAINS[c] %@ OR kiplmj_input_dialect CONTAINS[c] %@"
+                } else {
+                    queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@ OR poj_unicode_dialect CONTAINS[c] %@ OR kiplmj_unicode_dialect CONTAINS[c] %@"
+                }
             } else {
-                queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@ OR poj_input_dialect = %@ OR poj_unicode_dialect = %@ OR kiplmj_input_dialect = %@ OR kiplmj_unicode_dialect = %@"
+                if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+                    queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@ OR poj_input_dialect =[c] %@ OR kiplmj_input_dialect =[c] %@"
+                } else {
+                    queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@ OR poj_unicode_dialect =[c] %@ OR kiplmj_unicode_dialect =[c] %@"
+                }
             }
             let queryKeyword = self.keyword!.lowercased()
             let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -50,9 +58,9 @@ class TaioanPehoeKichhooGikuResultTableViewController: UITableViewController {
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HOABUN) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "hoabun CONTAINS %@"
+                queryFormat = "hoabun CONTAINS[c] %@"
             } else {
-                queryFormat = "hoabun = %@"
+                queryFormat = "hoabun =[c] %@"
             }
             let queryKeyword = self.keyword!.lowercased()
             let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)

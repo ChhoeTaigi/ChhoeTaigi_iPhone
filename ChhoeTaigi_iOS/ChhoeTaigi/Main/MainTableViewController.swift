@@ -41,12 +41,14 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         if (indexPath.section == 0) {
             if (indexPath.row == 0) {
-                performSegue(withIdentifier: "segueSearchAllWithLomaji", sender: nil)
+                performSegue(withIdentifier: "segueSearchAllWithLomajiSooji", sender: nil)
             } else if (indexPath.row == 1) {
-                performSegue(withIdentifier: "segueSearchAllWithHanlo", sender: nil)
+                performSegue(withIdentifier: "segueSearchAllWithLomaji", sender: nil)
             } else if (indexPath.row == 2) {
-                performSegue(withIdentifier: "segueSearchAllWithHoabun", sender: nil)
+                performSegue(withIdentifier: "segueSearchAllWithHanlo", sender: nil)
             } else if (indexPath.row == 3) {
+                performSegue(withIdentifier: "segueSearchAllWithHoabun", sender: nil)
+            } else if (indexPath.row == 4) {
                 performSegue(withIdentifier: "segueSearchAllWithEngbun", sender: nil)
             }
         }
@@ -117,7 +119,10 @@ class MainTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if (segue.identifier == "segueSearchAllWithLomaji") {
+        if (segue.identifier == "segueSearchAllWithLomajiSooji") {
+            let vc = segue.destination as! SearchAllViewController
+            vc.searchAllType = SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI
+        } else if (segue.identifier == "segueSearchAllWithLomaji") {
             let vc = segue.destination as! SearchAllViewController
             vc.searchAllType = SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI
         } else if (segue.identifier == "segueSearchAllWithHanlo") {

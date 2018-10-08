@@ -7,10 +7,11 @@ import RealmSwift
 import Segmentio
 
 class SearchAllViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    public static let SEARCH_ALL_TYPE_LOMAJI = 1
-    public static let SEARCH_ALL_TYPE_HANLO = 2
-    public static let SEARCH_ALL_TYPE_HOABUN = 3
-    public static let SEARCH_ALL_TYPE_ENGBUN = 4
+    public static let SEARCH_ALL_TYPE_LOMAJI_SOOJI = 1
+    public static let SEARCH_ALL_TYPE_LOMAJI = 2
+    public static let SEARCH_ALL_TYPE_HANLO = 3
+    public static let SEARCH_ALL_TYPE_HOABUN = 4
+    public static let SEARCH_ALL_TYPE_ENGBUN = 5
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -25,6 +26,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
     private var searchEquals: Bool = false
     
     private var isFirstLoadActiveKeyboard = true
+    
+    // searchAllWithLomajiSooji
+    private var searchAllWithLomajiSoojiInTaibunHoabunSoanntengSutianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInTaijitToaSutianSutianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInMaryknollTaiengSutianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInEmbreeTaigiSutianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInKauiokpooTaigiSutianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInKamJitianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInITaigiTaihoaSutianPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInTaioanPehoeKichhooGikuPublishSubject :PublishSubject = PublishSubject<String>()
+    private var searchAllWithLomajiSoojiInTaioanSitbutMialuiPublishSubject :PublishSubject = PublishSubject<String>()
     
     // searchAllWithLomaji
     private var searchAllWithLomajiInTaibunHoabunSoanntengSutianPublishSubject :PublishSubject = PublishSubject<String>()
@@ -89,11 +101,14 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
             self.searchAllResults.append(SearchAllResult(index))
         }
         
-        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
-            self.searchBar.placeholder = "請phah【Lô-má-jī】"
-            setupSearchAllWithLomajiPublishSubjects()
+        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+            self.searchBar.placeholder = "請phah【LMJ台文(數字輸入)】"
+            setupSearchAllWithLomajiPublishSubjects(isLomajiSoojiInputMode: true)
+        } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+            self.searchBar.placeholder = "請phah【LMJ台文】"
+            setupSearchAllWithLomajiPublishSubjects(isLomajiSoojiInputMode: false)
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HANLO) {
-            self.searchBar.placeholder = "請phah【漢字/漢羅】"
+            self.searchBar.placeholder = "請phah【漢字/漢羅台文】"
             setupSearchAllWithHanloPublishSubjects()
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HOABUN) {
             self.searchBar.placeholder = "請phah【對應ê華文】"
@@ -198,7 +213,7 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
         searchAll(self.searchBar.text!)
     }
     
-    private func setupSearchAllWithLomajiPublishSubjects() {
+    private func setupSearchAllWithLomajiPublishSubjects(isLomajiSoojiInputMode: Bool) {
         // 1. Taihoa Soannteng Sutian
         searchAllWithLomajiInTaibunHoabunSoanntengSutianPublishSubject
             .debounce(0.5, scheduler: MainScheduler.instance) // Wait 0.5 for changes.
@@ -213,9 +228,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@ OR poj_input_dialect CONTAINS %@ OR poj_unicode_dialect CONTAINS %@ OR kiplmj_input_dialect CONTAINS %@ OR kiplmj_unicode_dialect CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@ OR poj_input_dialect CONTAINS[c] %@ OR kiplmj_input_dialect CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@ OR poj_unicode_dialect CONTAINS[c] %@ OR kiplmj_unicode_dialect CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@ OR poj_input_dialect = %@ OR poj_unicode_dialect = %@ OR kiplmj_input_dialect = %@ OR kiplmj_unicode_dialect = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@ OR poj_input_dialect =[c] %@ OR kiplmj_input_dialect =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@ OR poj_unicode_dialect =[c] %@ OR kiplmj_unicode_dialect =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -249,9 +272,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@ OR poj_input_dialect CONTAINS %@ OR poj_unicode_dialect CONTAINS %@ OR kiplmj_input_dialect CONTAINS %@ OR kiplmj_unicode_dialect CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@ OR poj_input_dialect CONTAINS[c] %@ OR kiplmj_input_dialect CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@ OR poj_unicode_dialect CONTAINS[c] %@ OR kiplmj_unicode_dialect CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@ OR poj_input_dialect = %@ OR poj_unicode_dialect = %@ OR kiplmj_input_dialect = %@ OR kiplmj_unicode_dialect = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@ OR poj_input_dialect =[c] %@ OR kiplmj_input_dialect =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@ OR poj_unicode_dialect =[c] %@ OR kiplmj_unicode_dialect =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -285,9 +316,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -321,9 +360,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -357,9 +404,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@ OR poj_input_dialect CONTAINS %@ OR poj_unicode_dialect CONTAINS %@ OR kiplmj_input_dialect CONTAINS %@ OR kiplmj_unicode_dialect CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@ OR poj_input_dialect CONTAINS[c] %@ OR kiplmj_input_dialect CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@ OR poj_unicode_dialect CONTAINS[c] %@ OR kiplmj_unicode_dialect CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@ OR poj_input_dialect = %@ OR poj_unicode_dialect = %@ OR kiplmj_input_dialect = %@ OR kiplmj_unicode_dialect = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@ OR poj_input_dialect =[c] %@ OR kiplmj_input_dialect =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@ OR poj_unicode_dialect =[c] %@ OR kiplmj_unicode_dialect =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -393,9 +448,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -429,9 +492,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -465,9 +536,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@ OR poj_input_dialect CONTAINS %@ OR poj_unicode_dialect CONTAINS %@ OR kiplmj_input_dialect CONTAINS %@ OR kiplmj_unicode_dialect CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@ OR poj_input_dialect CONTAINS[c] %@ OR kiplmj_input_dialect CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@ OR poj_unicode_dialect CONTAINS[c] %@ OR kiplmj_unicode_dialect CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@ OR poj_input_dialect = %@ OR poj_unicode_dialect = %@ OR kiplmj_input_dialect = %@ OR kiplmj_unicode_dialect = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@ OR poj_input_dialect =[c] %@ OR kiplmj_input_dialect =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@ OR poj_unicode_dialect =[c] %@ OR kiplmj_unicode_dialect =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -501,9 +580,17 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                            }
                         } else {
-                            queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                            if (isLomajiSoojiInputMode) {
+                                queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                            } else {
+                                queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                            }
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -539,9 +626,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanlo_taibun_poj CONTAINS %@ OR hanlo_taibun_kiplmj CONTAINS %@"
+                            queryFormat = "hanlo_taibun_poj CONTAINS[c] %@ OR hanlo_taibun_kiplmj CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanlo_taibun_poj = %@ OR hanlo_taibun_kiplmj = %@"
+                            queryFormat = "hanlo_taibun_poj =[c] %@ OR hanlo_taibun_kiplmj =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -575,9 +662,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanlo_taibun_poj CONTAINS %@ OR hanlo_taibun_kiplmj CONTAINS %@"
+                            queryFormat = "hanlo_taibun_poj CONTAINS[c] %@ OR hanlo_taibun_kiplmj CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanlo_taibun_poj = %@ OR hanlo_taibun_kiplmj = %@"
+                            queryFormat = "hanlo_taibun_poj =[c] %@ OR hanlo_taibun_kiplmj =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -614,9 +701,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanji_taibun CONTAINS %@"
+                            queryFormat = "hanji_taibun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanji_taibun = %@"
+                            queryFormat = "hanji_taibun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -650,9 +737,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanlo_taibun_poj CONTAINS %@ OR hanlo_taibun_kiplmj CONTAINS %@"
+                            queryFormat = "hanlo_taibun_poj CONTAINS[c] %@ OR hanlo_taibun_kiplmj CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanlo_taibun_poj = %@ OR kiplmj_unicode = %@"
+                            queryFormat = "hanlo_taibun_poj =[c] %@ OR kiplmj_unicode =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -686,9 +773,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanlo_taibun_kiplmj CONTAINS %@"
+                            queryFormat = "hanlo_taibun_kiplmj CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanlo_taibun_kiplmj = %@"
+                            queryFormat = "hanlo_taibun_kiplmj =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -724,9 +811,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanji_taibun CONTAINS %@"
+                            queryFormat = "hanji_taibun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanji_taibun = %@"
+                            queryFormat = "hanji_taibun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -762,9 +849,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hoabun CONTAINS %@"
+                            queryFormat = "hoabun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hoabun = %@"
+                            queryFormat = "hoabun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -800,9 +887,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hoabun CONTAINS %@"
+                            queryFormat = "hoabun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hoabun = %@"
+                            queryFormat = "hoabun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -836,9 +923,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hoabun CONTAINS %@"
+                            queryFormat = "hoabun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hoabun = %@"
+                            queryFormat = "hoabun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -872,9 +959,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hoabun CONTAINS %@"
+                            queryFormat = "hoabun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hoabun = %@"
+                            queryFormat = "hoabun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -910,9 +997,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hoabun CONTAINS %@"
+                            queryFormat = "hoabun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hoabun = %@"
+                            queryFormat = "hoabun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -946,9 +1033,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hoabun CONTAINS %@"
+                            queryFormat = "hoabun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hoabun = %@"
+                            queryFormat = "hoabun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -989,9 +1076,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "english_descriptions CONTAINS %@"
+                            queryFormat = "english_descriptions CONTAINS[c] %@"
                         } else {
-                            queryFormat = "english_descriptions = %@"
+                            queryFormat = "english_descriptions =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -1025,9 +1112,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "english_descriptions CONTAINS %@"
+                            queryFormat = "english_descriptions CONTAINS[c] %@"
                         } else {
-                            queryFormat = "english_descriptions = %@"
+                            queryFormat = "english_descriptions =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -1068,7 +1155,7 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! SearchAllTableViewCell
         
-        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI || searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
             setCellSearching(cell: cell, cellForRowAt: indexPath)
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HANLO) {
             if (indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 7) {
@@ -1206,7 +1293,7 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.searchKeyword = searchStringTrimmed
         
-        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI || searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
             searchAllWithLomaji(searchStringTrimmed)
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HANLO) {
             searchAllWithHanlo(searchStringTrimmed)

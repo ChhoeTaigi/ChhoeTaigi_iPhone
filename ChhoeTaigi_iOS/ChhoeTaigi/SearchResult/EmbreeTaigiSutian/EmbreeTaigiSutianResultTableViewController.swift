@@ -37,12 +37,20 @@ class EmbreeTaigiSutianResultTableViewController: UITableViewController {
     }
     
     func starSearch() {
-        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+        if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI || searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "poj_input CONTAINS %@ OR poj_unicode CONTAINS %@ OR kiplmj_input CONTAINS %@ OR kiplmj_unicode CONTAINS %@"
+                if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+                    queryFormat = "poj_input CONTAINS[c] %@ OR kiplmj_input CONTAINS[c] %@"
+                } else {
+                    queryFormat = "poj_unicode CONTAINS[c] %@ OR kiplmj_unicode CONTAINS[c] %@"
+                }
             } else {
-                queryFormat = "poj_input = %@ OR poj_unicode = %@ OR kiplmj_input = %@ OR kiplmj_unicode = %@"
+                if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+                    queryFormat = "poj_input =[c] %@ OR kiplmj_input =[c] %@"
+                } else {
+                    queryFormat = "poj_unicode =[c] %@ OR kiplmj_unicode =[c] %@"
+                }
             }
             let queryKeyword = self.keyword!.lowercased()
             let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)
@@ -50,7 +58,7 @@ class EmbreeTaigiSutianResultTableViewController: UITableViewController {
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HOABUN) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "hoabun CONTAINS %@"
+                queryFormat = "hoabun CONTAINS[c] %@"
             } else {
                 queryFormat = "hoabun = %@"
             }
@@ -60,7 +68,7 @@ class EmbreeTaigiSutianResultTableViewController: UITableViewController {
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_ENGBUN) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "english_descriptions CONTAINS %@"
+                queryFormat = "english_descriptions CONTAINS[c] %@"
             } else {
                 queryFormat = "english_descriptions = %@"
             }
