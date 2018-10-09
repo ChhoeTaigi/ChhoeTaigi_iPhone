@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-gL-yfC" userLabel="Logo">
-                                <rect key="frame" x="0.0" y="64" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="GBu-ke-LVF">
-                                        <rect key="frame" x="62" y="10" width="251" height="50"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="GBu-ke-LVF">
+                                        <rect key="frame" x="62" y="10" width="250" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="sm6-pU-f5l"/>
+                                            <constraint firstAttribute="height" constant="40" id="sm6-pU-f5l"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -32,11 +31,10 @@
                                     <constraint firstItem="GBu-ke-LVF" firstAttribute="centerX" secondItem="TbC-gL-yfC" secondAttribute="centerX" id="4Sd-di-ncu"/>
                                     <constraint firstItem="GBu-ke-LVF" firstAttribute="top" secondItem="TbC-gL-yfC" secondAttribute="top" constant="10" id="YAj-Nr-xuX"/>
                                     <constraint firstItem="GBu-ke-LVF" firstAttribute="centerY" secondItem="TbC-gL-yfC" secondAttribute="centerY" id="fxK-TD-RHy"/>
-                                    <constraint firstItem="GBu-ke-LVF" firstAttribute="leading" secondItem="TbC-gL-yfC" secondAttribute="leading" constant="62" id="rTO-Cb-YMg"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7e2-Ad-6D0">
-                                <rect key="frame" x="0.0" y="142" width="375" height="447"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="457"/>
                                 <connections>
                                     <segue destination="57d-Lh-jym" kind="embed" id="8zu-oC-1jz"/>
                                 </connections>
@@ -253,23 +251,9 @@
                     <view key="view" contentMode="scaleToFill" id="XPC-QZ-ZnG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aI6-7d-cG8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2EQ-ft-FS9"/>
                     </view>
-                    <connections>
-                        <outlet property="webView" destination="aI6-7d-cG8" id="dOi-9B-Qln"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICg-cw-VoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,7 +430,7 @@
             <objects>
                 <viewController id="bMp-zM-rhH" customClass="SearchAllViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EsL-tc-eKT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="請phah字..." translatesAutoresizingMaskIntoConstraints="NO" id="cuS-Ij-WGB">
@@ -484,7 +468,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HF5-mf-9Re">
-                                <rect key="frame" x="0.0" y="90" width="375" height="367"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -571,7 +555,7 @@
             <objects>
                 <tableViewController id="iJy-8E-1An" customClass="TaihoaSoanntengSutianResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZJ6-lu-Mx9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IMe-qi-xQz"/>
@@ -745,7 +729,7 @@
             <objects>
                 <tableViewController id="fft-H5-O9k" customClass="TaihoaSoanntengSutianWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X4w-P4-yUH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DAh-cY-rGw"/>
@@ -815,7 +799,7 @@
             <objects>
                 <tableViewController id="97T-RG-EQB" customClass="TaijitToaSutianResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vWl-ju-AXv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZiZ-j6-kqH"/>
@@ -989,7 +973,7 @@
             <objects>
                 <tableViewController id="pIC-qd-Z84" customClass="TaijitToaSutianWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="muM-Uh-CiB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cTE-Z3-Lfs"/>
@@ -1059,7 +1043,7 @@
             <objects>
                 <tableViewController id="rAg-Na-KnF" customClass="MaryknollTaiengSutianResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cxq-OM-9jS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aew-HH-KGZ"/>
@@ -1233,7 +1217,7 @@
             <objects>
                 <tableViewController id="viI-Pt-KIm" customClass="MaryknollTaiengSutianWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dch-J2-EBi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EW9-CI-O4h"/>
@@ -1303,7 +1287,7 @@
             <objects>
                 <tableViewController id="755-LU-J2h" customClass="EmbreeTaigiSutianResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QHO-dp-7hu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8WO-9B-MaE"/>
@@ -1477,7 +1461,7 @@
             <objects>
                 <tableViewController id="hMI-gc-U5f" customClass="EmbreeTaigiSutianWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uqd-cr-dwM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Y24-yD-vhA"/>
@@ -1547,7 +1531,7 @@
             <objects>
                 <tableViewController id="QwH-Ha-nA7" customClass="KauiokpooTaigiDictResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d6H-Up-P1V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="eu9-1e-VAY">
@@ -1720,7 +1704,7 @@
             <objects>
                 <tableViewController id="M9A-7C-Uf0" customClass="KauiokpooTaigiDictWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RGO-Hw-JlD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cS3-UD-IQh"/>
@@ -1790,7 +1774,7 @@
             <objects>
                 <tableViewController id="NOu-2N-8lN" customClass="KamJitianResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nsb-mp-1b9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8YJ-dp-or1"/>
@@ -1965,7 +1949,7 @@
             <objects>
                 <tableViewController id="HmF-fw-KDT" customClass="KamJitianWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UWg-cc-kf8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FNk-VT-CGl"/>
@@ -2035,7 +2019,7 @@
             <objects>
                 <tableViewController id="oKD-6Y-V2w" customClass="ITaigiHoataiSutianResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1d1-Lr-Wie">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WOa-BF-gkZ"/>
@@ -2209,7 +2193,7 @@
             <objects>
                 <tableViewController id="zCF-Iu-Hdx" customClass="ITaigiHoataiSutianWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NhN-xG-rD0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lM7-yD-8GV"/>
@@ -2279,7 +2263,7 @@
             <objects>
                 <tableViewController id="bE7-lH-MN9" customClass="TaioanPehoeKichhooGikuResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ifF-No-VIw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MZA-KL-0fN"/>
@@ -2423,7 +2407,7 @@
             <objects>
                 <tableViewController id="Ns8-Dh-8Pr" customClass="TaioanPehoeKichhooGikuWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8cR-Zd-JZC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HHj-7Q-nGJ"/>
@@ -2493,7 +2477,7 @@
             <objects>
                 <tableViewController id="05y-cF-cOO" customClass="TaioanSitbutMialuiResultTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="me2-a4-AoO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ynY-s3-iLp"/>
@@ -2637,7 +2621,7 @@
             <objects>
                 <tableViewController id="0WN-7b-EmG" customClass="TaioanSitbutMialuiWordTableViewController" customModule="ChhoeTaigi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Les-sU-bmJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="aid-LV-Kq3">

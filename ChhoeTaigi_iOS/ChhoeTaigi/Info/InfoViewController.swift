@@ -50,7 +50,7 @@ class InfoViewController: UIViewController {
             vc.linkAddress = "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase/blob/master/README.md"
         } else if (segue.identifier == "segueChhoeTaigiSiaukai") {
             let vc = segue.destination as! WebkitViewController
-           vc.linkAddress = "https://chhoe.taigi.info/about"
+           vc.linkAddress = "https://chhoe.taigi.info/liaukai"
         } else if (segue.identifier == "segueWebsite") {
             let vc = segue.destination as! WebkitViewController
            vc.linkAddress = "https://chhoe.taigi.info/"

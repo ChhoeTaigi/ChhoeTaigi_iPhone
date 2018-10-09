@@ -6,8 +6,7 @@ class WebkitViewController: UIViewController, WKNavigationDelegate, WKUIDelegate
     
     public var linkAddress: String?
     
-    @IBOutlet weak var webView: WKWebView!
-    
+    private var webView: WKWebView!
     private var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -15,20 +14,26 @@ class WebkitViewController: UIViewController, WKNavigationDelegate, WKUIDelegate
 
         // Do any additional setup after loading the view.
         
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
+        let webConfiguration = WKWebViewConfiguration()
+        self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        self.view.addSubview(webView)
+        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        self.webView.frame = view.frame;
         
-        activityIndicator = UIActivityIndicatorView()
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        self.webView.uiDelegate = self
+        self.webView.navigationDelegate = self
         
-        view.addSubview(activityIndicator)
+        self.activityIndicator = UIActivityIndicatorView()
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.style = UIActivityIndicatorView.Style.gray
+        
+        self.view.addSubview(activityIndicator)
         showActivityIndicator(show: true)
         
         let url = URL(string: linkAddress!)!
-        webView.load(URLRequest(url: url))
-        webView.allowsBackForwardNavigationGestures = true
+        self.webView.load(URLRequest(url: url))
+        self.webView.allowsBackForwardNavigationGestures = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -102,6 +102,8 @@
 		55C4E9767FC927534EB332CC /* Pods-ChhoeTaigi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChhoeTaigi.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChhoeTaigi/Pods-ChhoeTaigi.release.xcconfig"; sourceTree = "<group>"; };
 		871B17F4216BA0FF004E0309 /* dict.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict.realm; sourceTree = "<group>"; };
 		871B17F6216BBF49004E0309 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		871B17F8216C83FA004E0309 /* Segmentio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Segmentio.framework; path = Carthage/Build/iOS/Segmentio.framework; sourceTree = "<group>"; };
+		871B17FD216C8452004E0309 /* Segmentio.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Segmentio.framework.dSYM; path = Carthage/Build/iOS/Segmentio.framework.dSYM; sourceTree = "<group>"; };
 		872F81442131EC3A003C40C6 /* RealmDatabaseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseLoader.swift; sourceTree = "<group>"; };
 		872F814A2131F2B7003C40C6 /* RealmModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
 		874C10182148B7D600D26024 /* SearchAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				2A785933DC5D0137290C998D /* Pods_ChhoeTaigi.framework */,
+				871B17F8216C83FA004E0309 /* Segmentio.framework */,
+				871B17FD216C8452004E0309 /* Segmentio.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -412,9 +416,9 @@
 			isa = PBXGroup;
 			children = (
 				87C0E4232131E45900F26C32 /* ChhoeTaigi */,
-				87C0E4222131E45900F26C32 /* Products */,
-				B5647765C643AA37BD4328AB /* Pods */,
 				330DC05BACCD154D83B64F57 /* Frameworks */,
+				B5647765C643AA37BD4328AB /* Pods */,
+				87C0E4222131E45900F26C32 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -482,6 +486,7 @@
 				87C0E41F2131E45900F26C32 /* Resources */,
 				A9669D6F40E4C02AC4187B7D /* [CP] Embed Pods Frameworks */,
 				87DADCAD2158BEA9004D39C5 /* ShellScript */,
+				871B17FF216C84CE004E0309 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -573,6 +578,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		871B17FF216C84CE004E0309 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Segmentio.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Segmentio.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		87DADCAD2158BEA9004D39C5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -584,7 +608,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		A9669D6F40E4C02AC4187B7D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -601,7 +625,6 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -614,7 +637,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,7 +797,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -830,7 +851,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -846,8 +866,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6TMY38EGFK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ChhoeTaigi/SupportFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -866,8 +889,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6TMY38EGFK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ChhoeTaigi/SupportFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
