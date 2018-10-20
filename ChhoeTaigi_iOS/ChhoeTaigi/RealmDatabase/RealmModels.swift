@@ -100,12 +100,15 @@ public class KamJitianModel: Object {
     @objc dynamic var id: String?
     @objc dynamic var poj_unicode: String?
     @objc dynamic var poj_input: String?
-    @objc dynamic var hanlo_taibun_poj: String?
+    @objc dynamic var hanji_taibun: String?
+    @objc dynamic var poj_bunim_unicode: String?
+    @objc dynamic var poj_bunim_input: String?
     @objc dynamic var poj_kaisoeh: String?
     @objc dynamic var hanlo_taibun_kaisoeh_poj: String?
     @objc dynamic var kiplmj_unicode: String?
     @objc dynamic var kiplmj_input: String?
-    @objc dynamic var hanlo_taibun_kiplmj: String?
+    @objc dynamic var kiplmj_bunim_unicode: String?
+    @objc dynamic var kiplmj_bunim_input: String?
     @objc dynamic var kiplmj_kaisoeh: String?
     @objc dynamic var page_number: String?
     

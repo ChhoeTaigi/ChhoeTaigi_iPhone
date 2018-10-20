@@ -30,9 +30,13 @@ class KamJitianResultTableViewCell: UITableViewCell {
             kiplmjUnicode = model.kiplmj_unicode!
         }
         
-        var hanloTaibunPoj = " "
-        if (model.hanlo_taibun_poj != nil && !model.hanlo_taibun_poj!.isEmpty) {
-            hanloTaibunPoj = model.hanlo_taibun_poj!
+        var hanjiTaibun = " "
+        if (model.hanji_taibun != nil && !model.hanji_taibun!.isEmpty) {
+            hanjiTaibun = model.hanji_taibun!
+        }
+        var pojBunimUnicode = " "
+        if (model.poj_bunim_unicode != nil && !model.poj_bunim_unicode!.isEmpty) {
+            pojBunimUnicode = "(\(model.poj_bunim_unicode!))"
         }
         
         var hanloTaibunKaisoehPoj = " "
@@ -42,7 +46,7 @@ class KamJitianResultTableViewCell: UITableViewCell {
         
         pojContentLabel.text = pojUnicode
         kiplmjContentLabel.text = kiplmjUnicode
-        hanloTaibunContentLabel.text = hanloTaibunPoj
+        hanloTaibunContentLabel.text = hanjiTaibun + pojBunimUnicode
         taibunKaisoehContentLabel.text = hanloTaibunKaisoehPoj
     }
 }

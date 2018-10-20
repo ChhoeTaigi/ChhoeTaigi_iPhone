@@ -227,11 +227,11 @@
 		872F81472131F0AF003C40C6 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				871B17F4216BA0FF004E0309 /* dict.realm */,
-				87DADC9021553438004D39C5 /* Images */,
 				87C0E4242131E45900F26C32 /* AppDelegate.swift */,
 				874C101E21490D3200D26024 /* AppIcon */,
 				87C0E42B2131E45B00F26C32 /* Assets.xcassets */,
+				871B17F4216BA0FF004E0309 /* dict.realm */,
+				87DADC9021553438004D39C5 /* Images */,
 				87C0E4302131E45B00F26C32 /* Info.plist */,
 				87C0E42D2131E45B00F26C32 /* LaunchScreen.storyboard */,
 			);

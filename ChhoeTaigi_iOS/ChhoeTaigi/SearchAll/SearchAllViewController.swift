@@ -742,9 +742,9 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
                     } else {
                         var queryFormat: String
                         if (self.searchEquals == false) {
-                            queryFormat = "hanlo_taibun_poj CONTAINS[c] %@ OR hanlo_taibun_kiplmj CONTAINS[c] %@"
+                            queryFormat = "hanji_taibun CONTAINS[c] %@"
                         } else {
-                            queryFormat = "hanlo_taibun_poj =[c] %@ OR kiplmj_unicode =[c] %@"
+                            queryFormat = "hanji_taibun =[c] %@"
                         }
                         let queryKeyword = query.lowercased()
                         let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)

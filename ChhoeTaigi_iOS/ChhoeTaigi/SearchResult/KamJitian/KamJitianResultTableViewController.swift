@@ -58,9 +58,9 @@ class KamJitianResultTableViewController: UITableViewController {
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HANLO) {
             var queryFormat: String
             if (self.searchEquals == false) {
-                queryFormat = "hanlo_taibun_poj CONTAINS[c] %@ OR hanlo_taibun_kiplmj CONTAINS[c] %@"
+                queryFormat = "hanji_taibun CONTAINS[c] %@"
             } else {
-                queryFormat = "hanlo_taibun_poj =[c] %@ OR kiplmj_unicode =[c] %@"
+                queryFormat = "hanji_taibun =[c] %@"
             }
             let queryKeyword = self.keyword!.lowercased()
             let predicate = NSPredicate(format: queryFormat, queryKeyword, queryKeyword, queryKeyword, queryKeyword)

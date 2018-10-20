@@ -6,25 +6,25 @@ class MaryknollTaiengSutianWordTableViewCell: UITableViewCell {
     @IBOutlet weak var columnNameLabel: UILabel!
     @IBOutlet weak var columnContentLabel: UILabel!
     
-    private let columnNames = ["白話字",
-                               "白話字輸入",
-                               "教育部羅馬字",
-                               "教育部羅馬字輸入",
-                               "華文",
-                               "英文解說",
-                               "編號"]
-
+    public static let columnNames = ["白話字",
+                                     "白話字輸入",
+                                     "教育部羅馬字",
+                                     "教育部羅馬字輸入",
+                                     "華文",
+                                     "英文解說",
+                                     "編號"]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
     func bindData(index: Int, model: MaryknollTaiengSutianModel) {
         var columnContent = " "
         
@@ -44,7 +44,7 @@ class MaryknollTaiengSutianWordTableViewCell: UITableViewCell {
             columnContent = getContent(str: model.id)
         }
         
-        columnNameLabel.text = columnNames[index]
+        columnNameLabel.text = MaryknollTaiengSutianWordTableViewCell.columnNames[index]
         columnContentLabel.text = columnContent
     }
     
