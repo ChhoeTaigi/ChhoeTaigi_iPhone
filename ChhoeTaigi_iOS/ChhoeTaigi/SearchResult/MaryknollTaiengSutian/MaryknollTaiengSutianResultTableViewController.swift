@@ -4,7 +4,7 @@ import RxCocoa
 import RxSwift
 import RealmSwift
 
-class MaryknollTaiengSutianResultTableViewController: UITableViewController {
+class MaryknollTaiengSutianResultTableViewController: CustomBackButtonTableViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -29,9 +29,6 @@ class MaryknollTaiengSutianResultTableViewController: UITableViewController {
     
     func setup() {
         self.titleLabel.text = "3. Maryknoll台英辭典: \(self.keyword ?? "")"
-        
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
         
         starSearch()
     }
@@ -97,6 +94,14 @@ class MaryknollTaiengSutianResultTableViewController: UITableViewController {
         } else {
             return results!.count
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -89,9 +89,6 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     private func setup() {
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
-        
         setupSearchBar()
         setupSegmentControl()
         
@@ -102,24 +99,31 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI) {
+            self.navigationItem.title = "LMJ台文(數字輸入)"
             self.searchBar.placeholder = "請phah【LMJ台文(數字輸入)】"
             setupSearchAllWithLomajiPublishSubjects(isLomajiSoojiInputMode: true)
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
+            self.navigationItem.title = "LMJ台文"
             self.searchBar.placeholder = "請phah【LMJ台文】"
             setupSearchAllWithLomajiPublishSubjects(isLomajiSoojiInputMode: false)
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HANLO) {
+            self.navigationItem.title = "漢字/漢羅台文"
             self.searchBar.placeholder = "請phah【漢字/漢羅台文】"
             setupSearchAllWithHanloPublishSubjects()
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_HOABUN) {
+            self.navigationItem.title = "對應ê華文"
             self.searchBar.placeholder = "請phah【對應ê華文】"
             setupSearchAllWithHoabunPublishSubjects()
         } else if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_ENGBUN) {
+            self.navigationItem.title = "對應ê英文"
             self.searchBar.placeholder = "請phah【對應ê英文】"
             setupSearchAllWithEngbunPublishSubjects()
         }
     }
     
     private func setupSearchBar() {
+        self.searchBar.autocapitalizationType = .none
+        
         if let textfield = self.searchBar.value(forKey: "searchField") as? UITextField {
             let searchBarTextAttributes = [NSAttributedString.Key.font.rawValue: UIFont.systemFont(ofSize: 20)]
             textfield.defaultTextAttributes = convertToNSAttributedStringKeyDictionary(searchBarTextAttributes)
@@ -1155,6 +1159,14 @@ class SearchAllViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchAllResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

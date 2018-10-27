@@ -4,7 +4,7 @@ import RxCocoa
 import RxSwift
 import RealmSwift
 
-class TaihoaSoanntengSutianResultTableViewController: UITableViewController {
+class TaihoaSoanntengSutianResultTableViewController: CustomBackButtonTableViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -30,13 +30,10 @@ class TaihoaSoanntengSutianResultTableViewController: UITableViewController {
     func setup() {
         self.titleLabel.text = "1. 台文華文線頂辭典: \(self.keyword ?? "")"
         
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
-        
-        starSearch()
+        startSearch()
     }
     
-    func starSearch() {
+    func startSearch() {
         if (searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI_SOOJI || searchAllType == SearchAllViewController.SEARCH_ALL_TYPE_LOMAJI) {
             var queryFormat: String
             if (self.searchEquals == false) {
@@ -97,6 +94,14 @@ class TaihoaSoanntengSutianResultTableViewController: UITableViewController {
         } else {
             return results!.count
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

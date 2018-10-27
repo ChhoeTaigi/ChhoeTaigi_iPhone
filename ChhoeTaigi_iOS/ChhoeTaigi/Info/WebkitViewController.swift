@@ -11,8 +11,12 @@ class WebkitViewController: UIViewController, WKNavigationDelegate, WKUIDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        let backBarButtonItem = UIBarButtonItem()
+        backBarButtonItem.title = "Tńg--去"
+        self.navigationController!.navigationBar.topItem!.backBarButtonItem = backBarButtonItem
         
         let webConfiguration = WKWebViewConfiguration()
         self.webView = WKWebView(frame: .zero, configuration: webConfiguration)

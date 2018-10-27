@@ -2,7 +2,7 @@
 import UIKit
 import RealmSwift
 
-class KamJitianWordTableViewController: UITableViewController {
+class KamJitianWordTableViewController: CustomBackButtonTableViewController {
     
     public var modelData: KamJitianModel?
 
@@ -14,9 +14,6 @@ class KamJitianWordTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +33,14 @@ class KamJitianWordTableViewController: UITableViewController {
         return KamJitianWordTableViewCell.columnNames.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! KamJitianWordTableViewCell
         

@@ -2,7 +2,7 @@
 import UIKit
 import RealmSwift
 
-class KauiokpooTaigiDictWordTableViewController: UITableViewController {
+class KauiokpooTaigiDictWordTableViewController: CustomBackButtonTableViewController {
     
     public var modelData: KauiokpooTaigiSutianModel?
 
@@ -14,9 +14,6 @@ class KauiokpooTaigiDictWordTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +31,14 @@ class KauiokpooTaigiDictWordTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return KauiokpooTaigiDictWordTableViewCell.columnNames.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

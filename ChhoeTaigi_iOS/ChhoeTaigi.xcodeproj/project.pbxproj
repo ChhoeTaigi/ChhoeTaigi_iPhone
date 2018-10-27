@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -93,6 +93,7 @@
 		87DADC8C21551BE6004D39C5 /* Icon-196.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6E21551BE6004D39C5 /* Icon-196.png */; };
 		87DADC8D21551BE6004D39C5 /* Icon-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 87DADC6F21551BE6004D39C5 /* Icon-16.png */; };
 		87DADC922155544F004D39C5 /* Bundle+Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DADC912155544F004D39C5 /* Bundle+Versions.swift */; };
+		87E16F942184BE4B00618A86 /* CustomBackButtonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E16F932184BE4B00618A86 /* CustomBackButtonTableViewController.swift */; };
 		A096747619DF0A61D2CA5814 /* Pods_ChhoeTaigi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732FE640379CF98043F9719E /* Pods_ChhoeTaigi.framework */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +191,7 @@
 		87DADC8E2155326F004D39C5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		87DADC8F2155326F004D39C5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		87DADC912155544F004D39C5 /* Bundle+Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Versions.swift"; sourceTree = "<group>"; };
+		87E16F932184BE4B00618A86 /* CustomBackButtonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +430,7 @@
 				87BB293921343AED0073D126 /* SearchAll */,
 				8763EACF214508EC00FD040B /* SearchResult */,
 				872F81472131F0AF003C40C6 /* SupportFiles */,
+				87E16F922184BDEC00618A86 /* Utils */,
 			);
 			path = ChhoeTaigi;
 			sourceTree = "<group>";
@@ -458,6 +461,14 @@
 				8782DF8921518136009211EE /* poweredbyg0v-square.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		87E16F922184BDEC00618A86 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				87E16F932184BE4B00618A86 /* CustomBackButtonTableViewController.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B5647765C643AA37BD4328AB /* Pods */ = {
@@ -508,7 +519,7 @@
 				};
 			};
 			buildConfigurationList = 87C0E41C2131E45900F26C32 /* Build configuration list for PBXProject "ChhoeTaigi" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -636,6 +647,7 @@
 				8782DF7E214E4232009211EE /* ITaigiHoataiSutianResultTableViewController.swift in Sources */,
 				8782DF80214E4240009211EE /* KamJitianResultTableViewController.swift in Sources */,
 				8774047B2152CD0400577D89 /* KauiokpooTaigiDictWordTableViewController.swift in Sources */,
+				87E16F942184BE4B00618A86 /* CustomBackButtonTableViewController.swift in Sources */,
 				877404912153CE3500577D89 /* KauiokpooTaigiDictWordTableViewCell.swift in Sources */,
 				8782DF8F215184F7009211EE /* WebkitViewController.swift in Sources */,
 				87BB293621341E4F0073D126 /* MainTableViewController.swift in Sources */,

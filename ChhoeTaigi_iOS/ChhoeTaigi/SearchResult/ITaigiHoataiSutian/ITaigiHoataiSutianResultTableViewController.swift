@@ -4,7 +4,7 @@ import RxCocoa
 import RxSwift
 import RealmSwift
 
-class ITaigiHoataiSutianResultTableViewController: UITableViewController {
+class ITaigiHoataiSutianResultTableViewController: CustomBackButtonTableViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -29,9 +29,6 @@ class ITaigiHoataiSutianResultTableViewController: UITableViewController {
     
     func setup() {
         self.titleLabel.text = "7. iTaigi華台辭典: \(self.keyword ?? "")"
-        
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
         
         starSearch()
     }
@@ -97,6 +94,14 @@ class ITaigiHoataiSutianResultTableViewController: UITableViewController {
         } else {
             return results!.count
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
