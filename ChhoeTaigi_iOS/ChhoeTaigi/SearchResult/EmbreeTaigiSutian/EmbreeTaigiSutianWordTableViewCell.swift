@@ -64,3 +64,5 @@ class EmbreeTaigiSutianWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension EmbreeTaigiSutianWordTableViewCell: ContentLabelContainer {}

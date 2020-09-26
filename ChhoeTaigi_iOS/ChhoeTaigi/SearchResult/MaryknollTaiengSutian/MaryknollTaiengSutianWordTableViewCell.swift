@@ -56,3 +56,5 @@ class MaryknollTaiengSutianWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension MaryknollTaiengSutianWordTableViewCell: ContentLabelContainer {}

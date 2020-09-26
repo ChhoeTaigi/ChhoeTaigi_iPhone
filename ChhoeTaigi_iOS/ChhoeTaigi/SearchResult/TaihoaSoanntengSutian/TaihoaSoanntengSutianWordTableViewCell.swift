@@ -71,3 +71,5 @@ class TaihoaSoanntengSutianWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension TaihoaSoanntengSutianWordTableViewCell: ContentLabelContainer {}
