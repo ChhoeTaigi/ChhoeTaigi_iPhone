@@ -10,7 +10,7 @@ target 'ChhoeTaigi' do
     pod 'Crashlytics'
 
     # Realm
-    pod 'RealmSwift'
+    pod 'RealmSwift', '~> 3.0'
 
     # RxSwift
     pod 'RxSwift'
