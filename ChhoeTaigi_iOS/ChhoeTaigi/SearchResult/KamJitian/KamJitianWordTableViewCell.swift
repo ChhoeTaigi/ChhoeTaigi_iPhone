@@ -77,3 +77,5 @@ class KamJitianWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension KamJitianWordTableViewCell: ContentLabelContainer {}

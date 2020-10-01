@@ -68,3 +68,5 @@ class TaioanPehoeKichhooGikuWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension TaioanPehoeKichhooGikuWordTableViewCell: ContentLabelContainer {}

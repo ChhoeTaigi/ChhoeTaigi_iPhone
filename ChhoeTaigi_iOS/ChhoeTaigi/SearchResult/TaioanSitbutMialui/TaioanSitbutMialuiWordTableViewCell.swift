@@ -56,3 +56,5 @@ class TaioanSitbutMialuiWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension TaioanSitbutMialuiWordTableViewCell: ContentLabelContainer {}

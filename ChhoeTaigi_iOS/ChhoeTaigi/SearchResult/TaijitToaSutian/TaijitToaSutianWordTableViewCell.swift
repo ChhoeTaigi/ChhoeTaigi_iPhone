@@ -83,3 +83,5 @@ class TaijitToaSutianWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension TaijitToaSutianWordTableViewCell: ContentLabelContainer {}

@@ -97,3 +97,12 @@ class MaryknollTaiengSutianWordTableViewController: CustomBackButtonTableViewCon
     */
 
 }
+
+@available(iOS 13.0, *)
+extension MaryknollTaiengSutianWordTableViewController: ContextMenuInteractable {
+
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return contextMenuConfiguration(for: self, at: indexPath)
+    }
+
+}

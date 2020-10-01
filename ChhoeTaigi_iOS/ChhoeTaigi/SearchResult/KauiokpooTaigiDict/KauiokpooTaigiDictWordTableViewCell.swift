@@ -95,3 +95,5 @@ class KauiokpooTaigiDictWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension KauiokpooTaigiDictWordTableViewCell: ContentLabelContainer {}

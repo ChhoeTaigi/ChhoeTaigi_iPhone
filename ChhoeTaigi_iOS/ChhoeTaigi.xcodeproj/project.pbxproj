@@ -95,6 +95,8 @@
 		87DADC922155544F004D39C5 /* Bundle+Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DADC912155544F004D39C5 /* Bundle+Versions.swift */; };
 		87E16F942184BE4B00618A86 /* CustomBackButtonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E16F932184BE4B00618A86 /* CustomBackButtonTableViewController.swift */; };
 		A096747619DF0A61D2CA5814 /* Pods_ChhoeTaigi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732FE640379CF98043F9719E /* Pods_ChhoeTaigi.framework */; };
+		B555C67C251FA57600FCC316 /* ContentLabelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555C67A251F9EDC00FCC316 /* ContentLabelContainer.swift */; };
+		B555C67D251FA62900FCC316 /* ContextMenuInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555C678251F9E0E00FCC316 /* ContextMenuInteractable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +194,8 @@
 		87DADC8F2155326F004D39C5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		87DADC912155544F004D39C5 /* Bundle+Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Versions.swift"; sourceTree = "<group>"; };
 		87E16F932184BE4B00618A86 /* CustomBackButtonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonTableViewController.swift; sourceTree = "<group>"; };
+		B555C678251F9E0E00FCC316 /* ContextMenuInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuInteractable.swift; sourceTree = "<group>"; };
+		B555C67A251F9EDC00FCC316 /* ContentLabelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentLabelContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +296,7 @@
 		8763EACF214508EC00FD040B /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
+				B555C675251F8BD900FCC316 /* Extension */,
 				8782DF69214E4139009211EE /* EmbreeTaigiSutian */,
 				8782DF6B214E4154009211EE /* ITaigiHoataiSutian */,
 				8782DF6A214E4143009211EE /* KamJitian */,
@@ -471,6 +476,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B555C675251F8BD900FCC316 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B555C678251F9E0E00FCC316 /* ContextMenuInteractable.swift */,
+				B555C67A251F9EDC00FCC316 /* ContentLabelContainer.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B5647765C643AA37BD4328AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,7 +537,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 87C0E4182131E45900F26C32;
 			productRefGroup = 87C0E4222131E45900F26C32 /* Products */;
@@ -660,6 +676,7 @@
 				8774048F2153CE1000577D89 /* MaryknollTaiengSutianWordTableViewCell.swift in Sources */,
 				877404772152CCC300577D89 /* ITaigiHoataiSutianWordTableViewController.swift in Sources */,
 				8782DF84214E4265009211EE /* TaijitToaSutianResultTableViewController.swift in Sources */,
+				B555C67D251FA62900FCC316 /* ContextMenuInteractable.swift in Sources */,
 				877404972153CE7600577D89 /* EmbreeTaigiSutianWordTableViewCell.swift in Sources */,
 				877404932153CE4A00577D89 /* KamJitianWordTableViewCell.swift in Sources */,
 				87D479CE214A6E1B00ED5A40 /* Results+ToArray.swift in Sources */,
@@ -687,6 +704,7 @@
 				87C0E4252131E45900F26C32 /* AppDelegate.swift in Sources */,
 				87BB2938213435680073D126 /* MainViewController.swift in Sources */,
 				877404872152D2E800577D89 /* TaioanSitbutMialuiWordTableViewCell.swift in Sources */,
+				B555C67C251FA57600FCC316 /* ContentLabelContainer.swift in Sources */,
 				874C10192148B7D600D26024 /* SearchAllTableViewCell.swift in Sources */,
 				8782DF74214E41CC009211EE /* KamJitianResultTableViewCell.swift in Sources */,
 				877404792152CCD200577D89 /* KamJitianWordTableViewController.swift in Sources */,

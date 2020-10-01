@@ -59,3 +59,5 @@ class ITaigiHoataiSutianWordTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension ITaigiHoataiSutianWordTableViewCell: ContentLabelContainer {}
