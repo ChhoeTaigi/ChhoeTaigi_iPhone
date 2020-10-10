@@ -1,0 +1,42 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-latest
+    env:
+      BUNDLE_PATH: vendor/bundle
+      BUNDLE_GEMFILE: .github/workflows/Gemfile
+      DEVELOPER_DIR: /Applications/Xcode_11.7.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v2.3.3
+      - uses: actions/setup-ruby@v1.1.2
+        with:
+          ruby-version: '2.6.x'
+
+      # Cache
+      - name: Cache ${{ env.BUNDLE_PATH }}
+        uses: actions/cache@v2.1.1
+        with:
+          path: ${{ env.BUNDLE_PATH }}
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+
+      # Dependencies
+      - name: Bundle install
+        run: |
+          gem install bundler -v `tail -1 ${{ env.BUNDLE_GEMFILE }}.lock`
+          bundle config path ${{ env.BUNDLE_PATH }}
+          bundle install --jobs 4 --retry 3
+      - name: Pod install
+        run: |
+          bundle exec pod install --project-directory=ChhoeTaigi_iOS
+
+      # Build project
+      - name: Workaround until git-lfs is set up
+        run: |
+          test -f ChhoeTaigi_iOS/ChhoeTaigi/SupportFiles/dict.realm || touch ChhoeTaigi_iOS/ChhoeTaigi/SupportFiles/dict.realm
+      - name: Build project
+        run: |
+          set -o pipefail && xcodebuild -workspace ChhoeTaigi_iOS/ChhoeTaigi.xcworkspace -scheme ChhoeTaigi -sdk iphonesimulator clean build | bundle exec xcpretty
